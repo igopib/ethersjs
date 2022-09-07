@@ -1,9 +1,3 @@
-const connectButton = document.getElementById("connectButton");
-const incrementNumber = document.getElementById("incrementButton");
-
-connectButton.onclick = connectWallet;
-incrementNumber.onclick = incrementNumber;
-
 let provider = new ethers.providers.Web3Provider(window.ethereum);
 let signer;
 
@@ -15,7 +9,7 @@ async function connectWallet() {
 }
 
 async function incrementNumber() {
-  const numberContractAddress = ""; // Input contract address here.
+  const numberContractAddress = "0xFD8a264E71d3513735A07b6AFf1BDD2451A9d64B"; // Input contract address here.
 
   const contractAbi = ["function incrementNumber() public "];
 

@@ -3,7 +3,7 @@ pragma solidity ^0.8.7;
 
 contract Storage {
     uint256 number;
-    uint256 public iNumber;
+    uint256 private iNumber;
 
     event Increment(uint256 indexed eNumber);
 
@@ -18,5 +18,9 @@ contract Storage {
     function incrementNumber() public {
         iNumber++;
         emit Increment(iNumber);
+    }
+
+    function getiNumber() public view returns (uint256) {
+        return iNumber;
     }
 }
