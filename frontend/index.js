@@ -22,3 +22,20 @@ async function incrementNumber() {
   const txResponse = await icoContract.connect(signer).incrementNumber();
   await txResponse.wait();
 }
+
+let num = document.getElementById("number");
+
+async function sendNumber() {
+  const numberContractAddress = "0xFD8a264E71d3513735A07b6AFf1BDD2451A9d64B"; // Input contract address here.
+
+  const contractAbi = ["function addNumber(uint256 _number) public"];
+
+  const icoContract = new ethers.Contract(
+    numberContractAddress,
+    contractAbi,
+    provider
+  );
+
+  const txResponse = await icoContract.connect(signer).addNumber(ethers.utils.formatEther( value ) => string);
+  await txResponse.wait();
+}

@@ -23,4 +23,8 @@ contract Storage {
     function getiNumber() public view returns (uint256) {
         return iNumber;
     }
+
+    function resetIncrement() public {
+        iNumber = 0;
+    }
 }
